@@ -2,54 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chrnos</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Chrnos OS</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">Chrnos</div>
-    <div class="window-controls" aria-label="Window controls">
-      <button aria-label="Minimize">0</button>
-      <button aria-label="Maximize">1</button>
-      <button aria-label="Close">r</button>
-    </div>
-  </header>
-
-  <main class="browser">
-    <nav class="toolbar" aria-label="Browser controls">
-      <button class="tool" aria-label="Back">7</button>
-      <button class="tool" aria-label="Forward">8</button>
-      <button class="tool" aria-label="Reload">q</button>
-      <div class="address"><span class="site-glyph">N</span><input id="address" value="https://chrnos.local/" aria-label="Address"></div>
-      <button class="tool" aria-label="Menu">≡</button>
-    </nav>
-
-    <section class="tabs" aria-label="Tabs">
-      <button class="tab active"><span class="tab-glyph">W</span> New Tab <span class="tab-close">r</span></button>
-      <button class="new-tab" aria-label="New tab">+</button>
-    </section>
-
-    <section class="page">
-      <div class="hero">
-        <div class="hero-icon" aria-hidden="true">W</div>
-        <h1>Welcome to Chrnos</h1>
-        <p>A small, clean web interface with classic Windows-style glyphs instead of emoji icons.</p>
-        <div class="search-row">
-          <input id="search" type="search" placeholder="Search the web" autocomplete="off">
-          <button id="searchButton">Search</button>
+  <main id="desktop" class="desktop">
+    <section id="browserWindow" class="chrome-window" aria-label="Chrome browser window">
+      <div class="window-tabs">
+        <div class="chrome-tab active"><span class="chrome-mini-logo"></span><span>New Tab</span><button class="tab-x" aria-label="Close tab">×</button></div>
+        <button class="new-tab" aria-label="New tab">+</button>
+        <div class="window-controls"><button id="minimizeButton" aria-label="Minimize">−</button><button id="maximizeButton" aria-label="Maximize">□</button><button id="closeButton" aria-label="Close">×</button></div>
+      </div>
+      <div class="browser-toolbar">
+        <button class="browser-button" aria-label="Back">‹</button><button class="browser-button" aria-label="Forward">›</button><button class="browser-button" aria-label="Reload">↻</button>
+        <div class="omnibox"><span class="lock">▣</span><input id="address" value="https://www.google.com/" aria-label="Address bar"><span class="star">☆</span></div>
+        <button class="browser-button menu-button" aria-label="Chrome menu">≡</button>
+      </div>
+      <div class="new-tab-page">
+        <div class="google-logo" aria-label="Google">Google</div>
+        <div class="google-search"><span class="search-icon">⌕</span><input id="search" placeholder="Search Google or type a URL" autocomplete="off"><button aria-label="Voice search" class="mic">◉</button></div>
+        <div class="shortcuts">
+          <button class="shortcut"><span class="shortcut-icon youtube">▶</span><span>YouTube</span></button><button class="shortcut"><span class="shortcut-icon gmail">M</span><span>Gmail</span></button><button class="shortcut"><span class="shortcut-icon drive">△</span><span>Google Drive</span></button><button class="shortcut"><span class="shortcut-icon store">C</span><span>Chrome Web Store</span></button>
+          <button class="shortcut"><span class="shortcut-icon search-g">G</span><span>Google Search</span></button><button class="shortcut"><span class="shortcut-icon maps">M</span><span>Google Maps</span></button><button class="shortcut"><span class="shortcut-icon news">N</span><span>News</span></button><button class="shortcut add-shortcut"><span>+</span><small>Add shortcut</small></button>
         </div>
       </div>
+    </section>
 
-      <div class="cards">
-        <article class="card"><div class="card-icon"></div><h2>Fast</h2><p>Simple static HTML, CSS and JavaScript. No framework mountain required.</p></article>
-        <article class="card"><div class="card-icon"></div><h2>Clean</h2><p>Traditional UI glyphs keep the interface consistent without emoji rendering.</p></article>
-        <article class="card"><div class="card-icon"></div><h2>Ready</h2><p>Everything runs directly in the browser with no build step.</p></article>
+    <section id="launcher" class="launcher-panel" aria-label="App launcher">
+      <div class="launcher-search"><span>⌕</span><input id="launcherSearch" placeholder="Search" autocomplete="off"><button>≡</button></div>
+      <div id="launcherApps" class="launcher-grid">
+        <button class="launcher-app" data-name="Chrome"><span class="app-icon chrome"></span><label>Chrome</label></button><button class="launcher-app" data-name="Web Store"><span class="app-icon webstore"></span><label>Web Store</label></button><button class="launcher-app" data-name="Gmail"><span class="app-icon gmail"></span><label>Gmail</label></button><button class="launcher-app" data-name="Google Drive"><span class="app-icon drive"></span><label>Google Drive</label></button>
+        <button class="launcher-app" data-name="YouTube"><span class="app-icon youtube"></span><label>YouTube</label></button><button class="launcher-app" data-name="Google Search"><span class="app-icon search-g">G</span><label>Google Search</label></button><button class="launcher-app" data-name="Google Maps"><span class="app-icon maps"></span><label>Google Maps</label></button><button class="launcher-app" data-name="Docs"><span class="app-icon docs"></span><label>Docs</label></button>
+        <button class="launcher-app" data-name="Sheets"><span class="app-icon sheets"></span><label>Sheets</label></button><button class="launcher-app" data-name="Slides"><span class="app-icon slides"></span><label>Slides</label></button><button class="launcher-app" data-name="Calendar"><span class="app-icon calendar">31</span><label>Calendar</label></button><button class="launcher-app" data-name="Files"><span class="app-icon files"></span><label>Files</label></button>
       </div>
+      <button class="all-apps">All apps <span>›</span></button>
+    </section>
+
+    <section id="tray" class="tray-panel" aria-label="System tray">
+      <div class="profile-row"><div class="avatar">●</div><div><strong>Guest</strong><small>Sign in</small></div><button class="gear" aria-label="Settings">G</button></div>
+      <div class="quick-controls"><button><span class="wifi-icon">◔</span><small>Connected to<br>Wi-Fi</small></button><button><span>♢</span><small>Bluetooth<br>Off</small></button><button><span>☼</span><small>Brightness<br>Medium</small></button></div>
+      <div class="volume-row"><span>◖</span><input type="range" min="0" max="100" value="72"><span>72%</span></div>
+      <div class="tray-bottom"><span id="trayDate">Fri, 16 May 2014</span><button>?</button><button aria-label="Power">P</button></div>
     </section>
   </main>
 
-  <footer>Chrnos Web</footer>
+  <footer id="shelf" class="shelf">
+    <button id="launcherButton" class="shelf-launcher" aria-label="Launcher"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></button>
+    <div class="pinned-apps"><button class="shelf-app active"><span class="app-icon chrome"></span></button><button class="shelf-app"><span class="app-icon gmail"></span></button><button class="shelf-app"><span class="app-icon youtube"></span></button><button class="shelf-app"><span class="app-icon search-g">G</span></button><button class="shelf-app"><span class="app-icon docs"></span></button><button class="shelf-app"><span class="app-icon files"></span></button></div>
+    <button id="trayButton" class="status-area" aria-label="System status"><span id="clock">13:27</span><span class="status-wifi">◔</span><span class="status-battery">▯</span><span>⌄</span></button>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
