@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chrnos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Chrnos</div>
+    <div class="window-controls" aria-label="Window controls">
+      <button aria-label="Minimize">0</button>
+      <button aria-label="Maximize">1</button>
+      <button aria-label="Close">r</button>
+    </div>
+  </header>
+
+  <main class="browser">
+    <nav class="toolbar" aria-label="Browser controls">
+      <button class="tool" aria-label="Back">7</button>
+      <button class="tool" aria-label="Forward">8</button>
+      <button class="tool" aria-label="Reload">q</button>
+      <div class="address"><span class="site-glyph">N</span><input id="address" value="https://chrnos.local/" aria-label="Address"></div>
+      <button class="tool" aria-label="Menu">≡</button>
+    </nav>
+
+    <section class="tabs" aria-label="Tabs">
+      <button class="tab active"><span class="tab-glyph">W</span> New Tab <span class="tab-close">r</span></button>
+      <button class="new-tab" aria-label="New tab">+</button>
+    </section>
+
+    <section class="page">
+      <div class="hero">
+        <div class="hero-icon" aria-hidden="true">W</div>
+        <h1>Welcome to Chrnos</h1>
+        <p>A small, clean web interface with classic Windows-style glyphs instead of emoji icons.</p>
+        <div class="search-row">
+          <input id="search" type="search" placeholder="Search the web" autocomplete="off">
+          <button id="searchButton">Search</button>
+        </div>
+      </div>
+
+      <div class="cards">
+        <article class="card"><div class="card-icon"></div><h2>Fast</h2><p>Simple static HTML, CSS and JavaScript. No framework mountain required.</p></article>
+        <article class="card"><div class="card-icon"></div><h2>Clean</h2><p>Traditional UI glyphs keep the interface consistent without emoji rendering.</p></article>
+        <article class="card"><div class="card-icon"></div><h2>Ready</h2><p>Everything runs directly in the browser with no build step.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>Chrnos Web</footer>
+  <script src="script.js"></script>
+</body>
+</html>
