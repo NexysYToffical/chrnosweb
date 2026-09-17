@@ -1,0 +1,193 @@
+* { box-sizing: border-box; }
+
+@font-face {
+  font-family: "Wingdings";
+  src: local("Wingdings");
+}
+
+@font-face {
+  font-family: "Webdings";
+  src: local("Webdings");
+}
+
+:root {
+  --bg: #f3f3f3;
+  --surface: #ffffff;
+  --line: #d4d4d4;
+  --text: #202020;
+  --muted: #666;
+  --accent: #2563eb;
+}
+
+html, body { margin: 0; min-height: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+.topbar {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 0 16px;
+  background: #202020;
+  color: white;
+}
+
+.brand { font-weight: 600; letter-spacing: .2px; }
+.window-controls { display: flex; gap: 2px; }
+.window-controls button {
+  width: 42px;
+  height: 30px;
+  border: 0;
+  background: transparent;
+  color: white;
+}
+.window-controls button:hover { background: #3a3a3a; }
+
+.browser {
+  width: min(1100px, calc(100% - 28px));
+  margin: 14px auto 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 8px 30px rgba(0,0,0,.08);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  background: #ededed;
+  border-bottom: 1px solid var(--line);
+}
+
+.tool {
+  width: 36px;
+  height: 34px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  font-family: "Webdings", "Wingdings", sans-serif;
+  font-size: 16px;
+}
+.tool:hover { background: #ddd; }
+
+.address {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  padding: 0 10px;
+  border: 1px solid #c9c9c9;
+  border-radius: 17px;
+  background: white;
+}
+.site-glyph {
+  font-family: "Webdings", "Wingdings", sans-serif;
+  font-size: 15px;
+}
+.address input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+.tabs {
+  display: flex;
+  align-items: end;
+  gap: 4px;
+  padding: 6px 8px 0;
+  background: #ededed;
+}
+.tab, .new-tab {
+  border: 1px solid var(--line);
+  border-bottom: 0;
+  background: #ddd;
+  border-radius: 8px 8px 0 0;
+  height: 34px;
+}
+.tab { min-width: 180px; padding: 0 10px; text-align: left; }
+.tab.active { background: white; }
+.tab-glyph, .tab-close {
+  font-family: "Webdings", "Wingdings", sans-serif;
+}
+.tab-close { float: right; margin-left: 20px; }
+.new-tab { width: 34px; }
+
+.page { padding: 64px 28px 70px; }
+.hero { max-width: 720px; margin: 0 auto; text-align: center; }
+.hero-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: #e8eefc;
+  color: var(--accent);
+  font-family: "Webdings", "Wingdings", sans-serif;
+  font-size: 34px;
+}
+
+h1 { margin: 20px 0 8px; font-size: clamp(32px, 5vw, 52px); }
+.hero p { color: var(--muted); font-size: 17px; line-height: 1.6; }
+
+.search-row { display: flex; gap: 8px; margin-top: 28px; }
+.search-row input {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  padding: 0 16px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  outline: none;
+}
+.search-row input:focus { border-color: var(--accent); }
+.search-row button {
+  height: 46px;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 900px;
+  margin: 55px auto 0;
+}
+.card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: white;
+}
+.card-icon {
+  font-family: "Wingdings", "Webdings", sans-serif;
+  font-size: 26px;
+}
+.card h2 { margin: 12px 0 6px; font-size: 19px; }
+.card p { margin: 0; color: var(--muted); line-height: 1.5; }
+
+footer { padding: 20px; text-align: center; color: #777; font-size: 13px; }
+
+@media (max-width: 700px) {
+  .browser { width: calc(100% - 12px); margin-top: 6px; }
+  .page { padding: 42px 18px 50px; }
+  .cards { grid-template-columns: 1fr; margin-top: 36px; }
+  .tab { min-width: 140px; }
+}
